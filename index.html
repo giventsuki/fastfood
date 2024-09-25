@@ -14,8 +14,9 @@
             <img
               src="images/white-logo.png"
               alt="white-logo"
-              class="header_logo-img"/>
-            </a>
+              class="header_logo-img"
+            />
+          </a>
         </div>
         <div class="header_content">
           <div class="header_content_burger">
@@ -116,15 +117,28 @@
           </ul>
         </nav>
         <div class="shop">
-            <div id="basket" class="basket">
-              <h2 class="catalog-title">Корзина</h2>
-              <h4 class="total-price">Итого: 0 ₽</h4>
-              <button class="credit-card" style="border: 1px solid black; cursor: pointer;
-              margin:10px 0 5px 0; padding: 5px" >Оплатить  <img src="./icons/credit-card.png" alt="credit card" 
-                width="15px" height="15px"></button>
-              <div id="basketCards" class="basket_cards">
-              </div>
-            </div>
+          <div id="basket" class="basket">
+            <h2 class="catalog-title">Корзина</h2>
+            <h4 class="total-price">Итого: 0 ₽</h4>
+            <button
+              class="credit-card"
+              style="
+                border: 1px solid black;
+                cursor: pointer;
+                margin: 10px 0 5px 0;
+                padding: 5px;
+              "
+            >
+              Оплатить
+              <img
+                src="./icons/credit-card.png"
+                alt="credit card"
+                width="15px"
+                height="15px"
+              />
+            </button>
+            <div id="basketCards" class="basket_cards"></div>
+          </div>
           <div id="burger" class="catalog">
             <h2 class="catalog-title">Бургеры</h2>
             <div class="cards">
@@ -273,6 +287,69 @@
             </div>
           </div>
         </div>
+        <div class="modal none">
+          <div class="payment">
+            <div class="payment_donut">
+              <img
+                src="./images/payment-donald.png"
+                alt="donut"
+                class="payment_donut-img"
+              />
+            </div>
+            <div class="payment_content">
+              <p class="payment_content-title">Доставка</p>
+              <form class="payment_content-form" action="">
+                <input
+                  type="text"
+                  class="payment_content-input"
+                  placeholder="Ваше имя"
+                />
+                <input
+                  type="number"
+                  class="payment_content-input"
+                  placeholder="Телефон"
+                />
+                <label class="payment_content-label">
+                  <input
+                    type="radio"
+                    class="payment_content-radio active"
+                    name="choice"
+                    value="self-call"
+                    checked
+                  />
+                  Самовызов
+                </label>
+                <label class="payment_content-label">
+                  <input
+                    type="radio"
+                    class="payment_content-radio"
+                    name="choice"
+                    value="delivery"
+                  />
+                  Доставка
+                </label>
+                <input
+                  type="text"
+                  class="payment_content-input"
+                  placeholder="Улица, дом, квартира"
+                />
+                <div class="flex-inputs">
+                  <input
+                    type="text"
+                    class="payment_content-input"
+                    placeholder="Этаж"
+                  />
+                  <input
+                    type="text"
+                    class="payment_content-input"
+                    placeholder="Домофон"
+                  />
+                </div>
+              </form>
+              <button class="payment_content-button">Оформить</button>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
     <footer class="footer">
@@ -309,7 +386,7 @@
           </div>
         </div>
       </div>
-    </footer> 
+    </footer>
 
     <script src="js/script.js"></script>
   </body>

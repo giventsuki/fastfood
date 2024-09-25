@@ -4,6 +4,9 @@
   --white: #ffffff;
   --yellow: #ffab08;
 }
+body.no-scroll {
+  overflow: hidden; /* Отключает прокрутку */
+}
 
 * {
   font-family: "Nunito", system-ui;
@@ -162,8 +165,6 @@ a {
   }
 }
 
-
-
 // footer
 .footer {
   .container {
@@ -213,6 +214,84 @@ a {
             }
           }
         }
+      }
+    }
+  }
+}
+
+
+.modal {
+  position: absolute; /* Фиксированное позиционирование для перекрытия */
+  top: 0;
+  left: 0;
+  width: 100%; /* Ширина на 100% от видимой области */
+  height: 100%; /* Высота на 100% от видимой области */
+  background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+  display: flex;
+  justify-content: center; /* Центрируем по горизонтали */
+  align-items: center; /* Центрируем по вертикали */
+
+  &.none{
+    display: none;
+  }
+  .payment {
+    width: 700px; /* Ширина модального окна */
+    height: 432px; /* Высота модального окна */
+    background-color: white; /* Цвет фона */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    position: relative; /* Относительное позиционирование для содержимого */
+    border-radius: 20px; /* Скругление углов */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Тень для эффекта модального окна */
+    .payment_donut {
+      height: 100%;
+      background-color: var(--yellow);
+      border-radius: 20px;
+      .payment_donut-img {
+        padding: 0 20px;
+        margin-top: 25%;
+      }
+    }
+    .payment_content {
+      height: 100%;
+      padding-left: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      .payment_content-title {
+        font-size: 26px;
+        font-weight: 600;
+      }
+      .payment_content-form {
+        .payment_content-input {
+          width: 90%;
+          border: none;
+          height: 50px;
+          padding: 2px 20px;
+          font-size: 16px;
+        }
+        .payment_content-label {
+          display: block;
+          margin: 5px 0;
+          .payment_content-radio {
+          }
+        }
+        .flex-inputs {
+          display: flex;
+          gap: 10px;
+        }
+      }
+      .payment_content-button {
+        margin: 0 auto;
+        display: block;
+        width: 90%;
+        height: 40px;
+        color: var(--white);
+        border: none;
+        border-radius: 10px;
+        background-color: var(--orange);
       }
     }
   }

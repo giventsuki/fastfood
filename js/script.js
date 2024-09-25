@@ -142,7 +142,25 @@ cardBtns.forEach(cardBtn => {
   });
 });
 
+
+
+const modal = document.querySelector('.modal')
+const payment = document.querySelector('.payment')
+const radioButtons = document.querySelectorAll('input[name="choice"]');
+
 const creditCard = document.querySelector('.credit-card')
 creditCard.addEventListener('click', e => {
-  
-})
+  modal.classList.remove('none'); // Убираем класс .none у оверлея
+  document.body.classList.add('no-scroll'); // Отключаем прокрутку
+  modal.scrollIntoView({ behavior: 'smooth', block: 'center' });
+});
+
+modal.addEventListener('click', (e) => {
+  // Проверяем, что клик был по оверлею
+  if (e.target === modal) { // Это условие проверяет, что клик произошел на оверлее
+    modal.classList.add('none'); // Скрываем модальное окно
+    document.body.classList.remove('no-scroll'); // Включаем прокрутку
+  }
+});
+
+
