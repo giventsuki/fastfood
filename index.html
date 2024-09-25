@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>FastFood</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header_logo">
+          <a href="#" class="header_logo-link">
+            <img
+              src="images/white-logo.png"
+              alt="white-logo"
+              class="header_logo-img"/>
+            </a>
+        </div>
+        <div class="header_content">
+          <div class="header_content_burger">
+            <img
+              class="header_content_burger-img"
+              src="images/main-burger.png"
+              alt="main-burger"
+            />
+          </div>
+          <div class="header_content_title">
+            <h1 class="white">
+              Только самые <br />
+              <h1 class="orange">сочные бургеры!</h1>
+            </h1>
+            <p class="free">Бесплатная доставка от <span> 599₽ </span></p>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <div class="container">
+        <nav class="nav">
+          <ul class="nav-list">
+            <li class="nav-item">
+              <button class="nav-btn active" data-id="burgerBtn">
+                <img
+                  src="./images/nav/burger.png"
+                  alt="бургеры"
+                  class="nav-img"
+                />
+                <p class="nav-text">Бургеры</p>
+              </button>
+            </li>
+            <li class="nav-item">
+              <button class="nav-btn" data-id="snackBtn">
+                <img
+                  src="./images/nav/snack.png"
+                  alt="закуски"
+                  class="nav-img"
+                />
+                <p class="nav-text">Закуски</p>
+              </button>
+            </li>
+            <li class="nav-item">
+              <button class="nav-btn" data-id="hotdogBtn">
+                <img
+                  src="./images/nav/hotdog.png"
+                  alt="ход-доги"
+                  class="nav-img"
+                />
+                <p class="nav-text">Ход-доги</p>
+              </button>
+            </li>
+            <li class="nav-item">
+              <button class="nav-btn" data-id="comboBtn">
+                <img src="./images/nav/combo.png" alt="комбо" class="nav-img" />
+                <p class="nav-text">Комбо</p>
+              </button>
+            </li>
+            <li class="nav-item">
+              <button class="nav-btn" data-id="shaurmaBtn">
+                <img
+                  src="./images/nav/shaurma.png"
+                  alt="шаурма"
+                  class="nav-img"
+                />
+                <p class="nav-text">Шаурма</p>
+              </button>
+            </li>
+            <li class="nav-item">
+              <button class="nav-btn" data-id="pizzaBtn">
+                <img src="./images/nav/pizza.png" alt="пицца" class="nav-img" />
+                <p class="nav-text">Пицца</p>
+              </button>
+            </li>
+            <li class="nav-item">
+              <button class="nav-btn" data-id="vokBtn">
+                <img src="./images/nav/vok.png" alt="Вок" class="nav-img" />
+                <p class="nav-text">Вок</p>
+              </button>
+            </li>
+            <li class="nav-item">
+              <button class="nav-btn" data-id="desertBtn">
+                <img
+                  src="./images/nav/desert.png"
+                  alt="десерты"
+                  class="nav-img"
+                />
+                <p class="nav-text">Десерты</p>
+              </button>
+            </li>
+            <li class="nav-item">
+              <button class="nav-btn" data-id="sauceBtn">
+                <img src="./images/nav/sauce.png" alt="соусы" class="nav-img" />
+                <p class="nav-text">Соусы</p>
+              </button>
+            </li>
+          </ul>
+        </nav>
+        <div class="shop">
+            <div id="basket" class="basket">
+              <h2 class="catalog-title">Корзина</h2>
+              <h4 class="total-price">Итого: 0 ₽</h4>
+              <button class="credit-card" style="border: 1px solid black; cursor: pointer;
+              margin:10px 0 5px 0; padding: 5px" >Оплатить  <img src="./icons/credit-card.png" alt="credit card" 
+                width="15px" height="15px"></button>
+              <div id="basketCards" class="basket_cards">
+              </div>
+            </div>
+          <div id="burger" class="catalog">
+            <h2 class="catalog-title">Бургеры</h2>
+            <div class="cards">
+              <div class="card">
+                <img
+                  src="/images/burgers/myasnaya-bomba.jpg"
+                  alt="мясная бомба"
+                  class="card-img"
+                />
+                <p class="card-price">689 ₽</p>
+                <p class="card-name">Мясная бомба</p>
+                <p class="card-weight">520г</p>
+                <button class="card-btn">Добавить</button>
+              </div>
+              <div class="card">
+                <img
+                  src="/images/burgers/super-syrnaya.jpg"
+                  alt="Супер сырный"
+                  class="card-img"
+                />
+                <p class="card-price">550 ₽</p>
+                <p class="card-name">Супер сырный</p>
+                <p class="card-weight">512г</p>
+                <button class="card-btn">Добавить</button>
+              </div>
+              <div class="card">
+                <img
+                  src="/images/burgers/sytnyi.jpg"
+                  alt="Сытный"
+                  class="card-img"
+                />
+                <p class="card-price">639 ₽</p>
+                <p class="card-name">Сытный</p>
+                <p class="card-weight">580г</p>
+                <button class="card-btn">Добавить</button>
+              </div>
+              <div class="card">
+                <img
+                  src="/images/burgers/tyajelyi-udar.jpg"
+                  alt="Тяжелый удар"
+                  class="card-img"
+                />
+                <p class="card-price">480 ₽</p>
+                <p class="card-name">Тяжелый удар</p>
+                <p class="card-weight">510г</p>
+                <button class="card-btn">Добавить</button>
+              </div>
+              <div class="card">
+                <img
+                  src="/images/burgers/vechnaya-classika.jpg"
+                  alt="Вечная классика"
+                  class="card-img"
+                />
+                <p class="card-price">450 ₽</p>
+                <p class="card-name">Вечная классика</p>
+                <p class="card-weight">450г</p>
+                <button class="card-btn">Добавить</button>
+              </div>
+              <div class="card">
+                <img
+                  src="/images/burgers/italyanski.jpg"
+                  alt="Итальянский"
+                  class="card-img"
+                />
+                <p class="card-price">560 ₽</p>
+                <p class="card-name">Итальянский</p>
+                <p class="card-weight">510г</p>
+                <button class="card-btn">Добавить</button>
+              </div>
+            </div>
+          </div>
+          <div id="snack" class="catalog none">
+            <h2 class="catalog-title">Закуски</h2>
+            <div class="cards">
+              <div class="card">
+                <img
+                  src="/images/snacks/nachos.jpg"
+                  alt="мясная бомба"
+                  class="card-img"
+                />
+                <p class="card-price">250 ₽</p>
+                <p class="card-name">Начос</p>
+                <p class="card-weight">220г</p>
+                <button class="card-btn">Добавить</button>
+              </div>
+              <div class="card">
+                <img
+                  src="/images/snacks/free.jpg"
+                  alt="мясная бомба"
+                  class="card-img"
+                />
+                <p class="card-price">245 ₽</p>
+                <p class="card-name">Картошка фри</p>
+                <p class="card-weight">180г</p>
+                <button class="card-btn">Добавить</button>
+              </div>
+              <div class="card">
+                <img
+                  src="/images/snacks/lukovye-kolca.jpg"
+                  alt="мясная бомба"
+                  class="card-img"
+                />
+                <p class="card-price">230 ₽</p>
+                <p class="card-name">Луковые кольца</p>
+                <p class="card-weight">160г</p>
+                <button class="card-btn">Добавить</button>
+              </div>
+            </div>
+          </div>
+          <div id="hotdog" class="catalog none">
+            <h2 class="catalog-title">Хот-доги</h2>
+            <div class="cards">
+              <div class="card">
+                <img
+                  src="/images/hot-dogs/domashni.jpg"
+                  alt="мясная бомба"
+                  class="card-img"
+                />
+                <p class="card-price">290 ₽</p>
+                <p class="card-name">Домашний хот-дог</p>
+                <p class="card-weight">250г</p>
+                <button class="card-btn">Добавить</button>
+              </div>
+              <div class="card">
+                <img
+                  src="/images/hot-dogs/jguchi.jpg"
+                  alt="мясная бомба"
+                  class="card-img"
+                />
+                <p class="card-price">240 ₽</p>
+                <p class="card-name">Жгучий хот-дог</p>
+                <p class="card-weight">245г</p>
+                <button class="card-btn">Добавить</button>
+              </div>
+              <div class="card">
+                <img
+                  src="/images/hot-dogs/classic.jpg"
+                  alt="мясная бомба"
+                  class="card-img"
+                />
+                <p class="card-price">220 ₽</p>
+                <p class="card-name">Классический хот-дог</p>
+                <p class="card-weight">215г</p>
+                <button class="card-btn">Добавить</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="copyright">
+          <img src="./images/orange-logo.png" alt="" class="copyright-logo" />
+          <p class="copyright-text">
+            © YouMeal, 2022 <br />
+            Design: Anastasia Ilina
+          </p>
+        </div>
+        <div class="contacts">
+          <div class="contacts_tel">
+            <p class="contacts-title">Номер для заказа</p>
+            <a href="telto:+7(930)833-38-11" class="contacts-link">
+              <img src="icons/call.png" alt="call" class="contacts-img" />
+              +7(930)833-38-11
+            </a>
+          </div>
+          <div class="contacts_socials">
+            <p class="contacts-title">Мы в соцсетях</p>
+            <ul class="contacts_socials-list">
+              <li class="contacts_socials-item">
+                <a href="#" class="contacts-link">
+                  <img src="icons/vk.png" alt="vk" class="contacts-img" />
+                </a>
+              </li>
+              <li class="contacts_socials-item">
+                <a href="#" class="contacts-link">
+                  <img src="icons/tg.png" alt="tg" class="contacts-img" />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer> 
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
