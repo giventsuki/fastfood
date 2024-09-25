@@ -45,9 +45,6 @@ cardBtns.forEach(cardBtn => {
     const cardSrc = e.target.parentElement.querySelector('.card-img').getAttribute('src');
     const cardAlt = e.target.parentElement.querySelector('.card-img').getAttribute('alt');
     const cardWeight = e.target.parentElement.querySelector('.card-weight').textContent;
-    
-    let count = 1;
-    let currentPrice = cardPrice;
 
     // Проверяем, есть ли уже такой товар в корзине
     let existingCard = Array.from(basketCards.children).find(basketCard => 
@@ -57,66 +54,95 @@ cardBtns.forEach(cardBtn => {
     function calculatePrice(card, currentCount) {
       const counterText = card.querySelector('.counter-text');
       const priceText = card.querySelector('.card-price');
-      counterText.textContent = `${currentCount} шт`;
+      counterText.textContent = `${currentCount}`; // Обновляем отображаемое количество
       const updatedPrice = cardPrice * currentCount;
-      priceText.textContent = `${updatedPrice} ₽`;
-      updateTotalPrice(); // Обновляем общую сумму после изменения цены
+      priceText.textContent = `${updatedPrice} ₽`; // Обновляем цену на основе количества
+      updateTotalPrice(); // Обновляем общую сумму
+    }
+
+    function updateBasketBorder() {
+      // Проверяем количество элементов в корзине и отображаем/скрываем границу
+      basketCards.children.length > 0
+        ? basketCards.style.border = '1px solid black'
+        : basketCards.style.border = 'none';
     }
 
     if (existingCard) {
-      // Если такой товар уже есть, увеличиваем количество
-      let currentCount = parseInt(existingCard.querySelector('.counter-text').textContent.split(' ')[0]);
-      currentCount++; // Увеличиваем текущее количество на 1
-      calculatePrice(existingCard, currentCount);
+      // Если товар уже есть, увеличиваем количество
+      let currentCount = parseInt(existingCard.querySelector('.counter-text').textContent); // Читаем текущее количество
+      currentCount++; // Увеличиваем на 1
+      calculatePrice(existingCard, currentCount); // Обновляем цену и количество
     } else {
       // Если товара нет, добавляем новый
       basketCards.insertAdjacentHTML('beforeend', `
-        <div id="basket-card" class="catalog" style="width: 300px; margin-top: 15px;">
-          <div class="card" style="padding:5px 15px">
+        <div class="basket-card" class="catalog" style="width: 300px; margin: 8px 0;">
+          <div class="card" style="
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            padding: 0 5px;
+          ">
             <img
-              width="270px"
-              height="200px"
+              width="120px"
+              height="100px"
               src="${cardSrc}"
               alt="${cardAlt}"
               class="card-img"
             />
-            <h4 class="card-price">${cardPrice} ₽</h4>
-            <p class="card-name">${cardName}</p>
-            <p class="card-weight">${cardWeight}</p>
-            <div class="counter">
-              <h4 class="counter-text">${count} шт</h4>
-              <div class="basket-btns">
-                <button class="basket-btn increment-btn" style="border: 1px solid black; width: 80px; height: 20px">+</button>
-                <button class="basket-btn decrement-btn" style="border: 1px solid black; width: 80px; height: 20px">-</button>
-              </div>
+            <div class="card-info">
+              <p class="card-name">${cardName}</p>
+              <h4 class="card-price">${cardPrice} ₽</h4>
+              <p class="card-weight">${cardWeight}</p>
+            </div>
+            <div class="card-counter" style="
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              gap: 10px;
+              padding: 0 5px;
+            ">
+              <button class="basket-btn decrement-btn" style="border: none; font-size: 20px; cursor: pointer;">-</button>
+              <h4 class="counter-text">1</h4> <!-- Начальное количество = 1 -->
+              <button class="basket-btn increment-btn" style="border: none; font-size: 20px; cursor: pointer;">+</button>
             </div>
           </div>
         </div>
       `);
 
-      const basketCard = basketCards.querySelector('#basket-card:last-child');
-      calculatePrice(basketCard, count);
+      const basketCard = basketCards.querySelector('.basket-card:last-child');
+      const counterText = basketCard.querySelector('.counter-text');
+      let currentCount = 1; // Начальное количество товара
+
+      calculatePrice(basketCard, currentCount); // Устанавливаем начальную цену и количество
 
       const incrementBtn = basketCard.querySelector('.increment-btn');
       const decrementBtn = basketCard.querySelector('.decrement-btn');
 
       incrementBtn.addEventListener('click', () => {
-        count++;
-        calculatePrice(basketCard, count);
+        currentCount = parseInt(counterText.textContent); // Получаем текущее количество
+        currentCount++; // Увеличиваем количество
+        calculatePrice(basketCard, currentCount); // Обновляем цену и количество
       });
 
       decrementBtn.addEventListener('click', () => {
-        if (count > 1) {
-          count--;
-          calculatePrice(basketCard, count);
+        currentCount = parseInt(counterText.textContent); // Получаем текущее количество
+        if (currentCount > 1) {
+          currentCount--; // Уменьшаем количество только если оно больше 1
+          calculatePrice(basketCard, currentCount);
         } else {
-          basketCard.remove();
+          basketCard.remove(); // Удаляем карточку
           updateTotalPrice(); // Обновляем общую сумму при удалении товара
+          updateBasketBorder(); // Проверяем, нужно ли скрыть границу корзины после удаления
         }
       });
     }
 
-    // Проверяем, нужно ли показывать границу корзины
-    basketCards.children.length > 0 ? basketCards.style.border = '1px solid black' : basketCards.style.border = 'none';
+    updateBasketBorder(); // Проверяем границу после добавления товара
   });
 });
+
+const creditCard = document.querySelector('.credit-card')
+creditCard.addEventListener('click', e => {
+  
+})

@@ -2,8 +2,7 @@
   --black: #000000;
   --orange: #ff5c00;
   --white: #ffffff;
-  --yellow:  #FFAB08;
-
+  --yellow: #ffab08;
 }
 
 * {
@@ -36,8 +35,7 @@ a {
       width: 150px;
       margin: 0 auto;
       padding: 24px 0;
-      .header_logo-link{
-        
+      .header_logo-link {
         .header_logo-img {
         }
       }
@@ -114,58 +112,55 @@ a {
       justify-content: center;
       align-items: start;
       gap: 50px;
-        .basket{
-        width: 300px;    
-        }
+    }
+    .catalog {
+      width: 960px;
+      .catalog-title {
+        margin-bottom: 10px;
       }
-      .catalog {
-        width: 960px;
-        .catalog-title {
-          margin-bottom: 10px;
-        }
-        .cards {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
-          align-items: center;
-          gap: 25px;
-          
-          .card {
-            width: 300px;
-            padding: 8px;
-            transition: transform 1s ease, border 0.5s ease-in;
-            &:hover{
-              border: 1px solid var(--yellow);
-              border-radius: 30px;
-              transform: scale(1.05);
-            }
-            .card-img {
-            }
-            .card-price {
-              font-size: 24px;
-              font-weight: 600;
-            }
-            .card-name {
-              font-size: 16px;
-              font-weight: 400;
-            }
-            .card-weight {
-              margin: 20px 0 10px;
-              font-style: 16px;
-              font-weight: 600;
-              opacity: 0.5;
-            }
-            .card-btn {
-              padding: 6px 0;
-              width: 90%;
-              border: none;
-              cursor: pointer;
-            }
+      .cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+
+        .card {
+          width: 300px;
+          padding: 8px;
+          transition: transform 1s ease, border 0.5s ease-in;
+          &:hover {
+            border: 1px solid var(--yellow);
+            border-radius: 30px;
+            transform: scale(1.05);
+          }
+          .card-img {
+          }
+          .card-price {
+            font-size: 24px;
+            font-weight: 600;
+          }
+          .card-name {
+            font-size: 16px;
+            font-weight: 400;
+          }
+          .card-weight {
+            margin: 20px 0 10px;
+            font-style: 16px;
+            font-weight: 600;
+            opacity: 0.5;
+          }
+          .card-btn {
+            padding: 6px 0;
+            width: 90%;
+            border: none;
+            cursor: pointer;
           }
         }
       }
     }
   }
+}
 
 
 
